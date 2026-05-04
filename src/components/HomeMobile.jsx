@@ -1,5 +1,6 @@
 import ellipse from '../assets/ellipse.svg'
 import mobGlass from '../assets/mob-glass.svg'
+import starMobile from '../assets/star-mobile.svg'
 import styles from './HomeMobile.module.css'
 
 export default function HomeMobile({ onNavigate }) {
@@ -23,8 +24,8 @@ export default function HomeMobile({ onNavigate }) {
         <button className={styles.navLink} onClick={() => onNavigate('contact')}>CONTACT</button>
       </nav>
 
-      {/* CSS diamond star */}
-      <div className={styles.star} />
+      {/* Star */}
+      <img src={starMobile} alt="" aria-hidden="true" className={styles.star} />
 
       {/* Title */}
       <div className={styles.titleFrame}>
