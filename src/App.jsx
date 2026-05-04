@@ -18,10 +18,11 @@ function MobileScaler({ children }) {
   }, [])
 
   return (
-    <div style={{ width: '100vw', height: '100svh', overflow: 'hidden' }}>
+    <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
       <div style={{
         width: 390,
         height: 844,
+        overflow: 'hidden',
         transform: `scale(${scale})`,
         transformOrigin: 'top left',
       }}>
@@ -31,26 +32,28 @@ function MobileScaler({ children }) {
   )
 }
 
-function DesktopScaler({ children }) {
-  const getScale = () => Math.min(
-    window.innerWidth  / 1440,
-    window.innerHeight / 760
-  )
-  const [scale, setScale] = useState(getScale)
+function DesktopScaler({ children, bg = '#FFFEF6' }) {
+  const [dims, setDims] = useState(() => ({ w: window.innerWidth, h: window.innerHeight }))
 
   useEffect(() => {
-    const update = () => setScale(getScale())
+    const update = () => setDims({ w: window.innerWidth, h: window.innerHeight })
     window.addEventListener('resize', update)
     return () => window.removeEventListener('resize', update)
   }, [])
 
+  const scale = Math.min(dims.w / 1440, dims.h / 760)
+  const offsetX = (dims.w - 1440 * scale) / 2
+
   return (
-    <div style={{ width: '100vw', height: '100vh', overflow: 'hidden', background: '#680E0F' }}>
+    <div style={{ width: '100%', height: '100%', overflow: 'hidden', background: bg, position: 'relative' }}>
       <div style={{
         width: 1440,
         height: 760,
         transform: `scale(${scale})`,
         transformOrigin: 'top left',
+        position: 'absolute',
+        left: offsetX,
+        top: 0,
       }}>
         {children}
       </div>
@@ -78,9 +81,9 @@ export default function App() {
     return <MobileScaler><HomeMobile onNavigate={navigate} /></MobileScaler>
   }
 
-  if (page === 'about')    return <DesktopScaler><About    onNavigate={navigate} /></DesktopScaler>
-  if (page === 'projects') return <DesktopScaler><Projects onNavigate={navigate} /></DesktopScaler>
-  if (page.startsWith('project-')) return <DesktopScaler><ProjectDetail projectId={page.replace('project-', '')} onNavigate={navigate} /></DesktopScaler>
-  if (page === 'contact')  return <DesktopScaler><Contact  onNavigate={navigate} /></DesktopScaler>
-  return <DesktopScaler><Home onNavigate={navigate} /></DesktopScaler>
+  if (page === 'about')    return <DesktopScaler bg="#680E0F"><About    onNavigate={navigate} /></DesktopScaler>
+  if (page === 'projects') return <DesktopScaler bg="#680E0F"><Projects onNavigate={navigate} /></DesktopScaler>
+  if (page === 'contact')  return <DesktopScaler bg="#680E0F"><Contact  onNavigate={navigate} /></DesktopScaler>
+  if (page.startsWith('project-')) return <DesktopScaler bg="#FFFEF6"><ProjectDetail projectId={page.replace('project-', '')} onNavigate={navigate} /></DesktopScaler>
+  return <DesktopScaler bg="#FFFEF6"><Home onNavigate={navigate} /></DesktopScaler>
 }

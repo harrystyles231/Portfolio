@@ -3,7 +3,6 @@
   width: 1440px;
   height: 760px;
   background: #FFFEF6;
-  overflow: hidden;
 }
 
 /* ── Dashed circle ── */
@@ -126,7 +125,7 @@
 .coupeGlass {
   position: absolute;
   width: 954px;
-  height: 486px;
+  height: auto;
   left: calc(50% - 477px);
   top: 274px;
   z-index: 3;

@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback } from 'react'
-import coupe from '../assets/coupe.png'
+import coupe from '../assets/casa.svg'
 import ellipse from '../assets/ellipse.svg'
 import star7 from '../assets/star-home.svg'
 import styles from './Home.module.css'

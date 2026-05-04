@@ -5,15 +5,15 @@ import expMenu from '../assets/experience-menu.svg'
 import starAbout from '../assets/star-about.svg'
 import styles from './About.module.css'
 
-const EXP_START      = 715
+const EXP_START      = 760
 const EXP_FREEZE_TOP = 100
-const EXP_LIFT       = EXP_START - EXP_FREEZE_TOP  // 615
+const EXP_LIFT       = EXP_START - EXP_FREEZE_TOP  // 660
 
 const SKILL_START    = 760
 const SKILL_END      = 72
 const SKILL_LIFT     = SKILL_START - SKILL_END       // 660
 
-const TOTAL_MAX_LIFT = EXP_LIFT + SKILL_LIFT         // 1275
+const TOTAL_MAX_LIFT = EXP_LIFT + SKILL_LIFT         // 1320
 
 const LERP = 0.1
 
