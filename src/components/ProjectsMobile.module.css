@@ -1,0 +1,198 @@
+.page {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  min-height: 844px;
+  background: #680E0F;
+  overflow: hidden;
+}
+
+/* ── Vertical line ── */
+.vLine {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  background: rgba(255, 248, 189, 0.2);
+  z-index: 0;
+}
+
+/* ── Nav ── */
+.nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: min(300px, 80vw);
+  height: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 28px;
+  padding: 20px 0;
+  background: #680E0F;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.navDivider {
+  width: 1px;
+  height: 15px;
+  background: rgba(255, 248, 189, 0.1);
+  flex-shrink: 0;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 248, 189, 0.5);
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover { color: #FFF8BD; }
+.active { color: #FFF8BD; }
+
+/* ── Project list ── */
+.list {
+  position: absolute;
+  top: 112px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0 14px;
+  box-sizing: border-box;
+  z-index: 3;
+  overflow: visible;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+  overflow: visible;
+}
+
+.rowMid {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding-left: 14vw;
+  overflow: visible;
+}
+
+.projectItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  opacity: 0.5;
+  flex: 1;
+  overflow: visible;
+  transition: opacity 0.2s ease;
+}
+
+.projectItem:active { opacity: 1; }
+
+.num {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: #FFF8BD;
+}
+
+.name {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(38px, 11.5vw, 48px);
+  line-height: 0.88em;
+  letter-spacing: -0.04em;
+  color: #FFF8BD;
+  white-space: nowrap;
+}
+
+/* ── Star ── */
+.star {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 577px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ── "CLICK FOR MORE" ── */
+.clickFrame {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 172px;
+  height: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 610px;
+  background: #680E0F;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+.clickLabel {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  text-align: center;
+  color: #FFF8BD;
+  opacity: 0.5;
+  margin: 0;
+  white-space: nowrap;
+}
+
+/* ── "(5)" count ── */
+.countFrame {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 720px;
+  background: #680E0F;
+  z-index: 3;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.count {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 1em;
+  letter-spacing: -0.04em;
+  color: #FFF8BD;
+  opacity: 0.2;
+  margin: 0;
+}

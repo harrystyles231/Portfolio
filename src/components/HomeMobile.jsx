@@ -1,5 +1,5 @@
-import coupe from '../assets/coupe.png'
 import ellipse from '../assets/ellipse.svg'
+import mobGlass from '../assets/mob-glass.svg'
 import styles from './HomeMobile.module.css'
 
 export default function HomeMobile({ onNavigate }) {
@@ -12,7 +12,7 @@ export default function HomeMobile({ onNavigate }) {
       {/* Dashed ellipse */}
       <img src={ellipse} alt="" aria-hidden="true" className={styles.ellipse} />
 
-      {/* Nav — bg masks the line */}
+      {/* Nav */}
       <nav className={styles.nav}>
         <button className={`${styles.navLink} ${styles.active}`} onClick={() => onNavigate('home')}>HOME</button>
         <div className={styles.navDivider} />
@@ -32,10 +32,8 @@ export default function HomeMobile({ onNavigate }) {
         <p className={styles.titleLine2}>I mean, my <em>portfolio</em></p>
       </div>
 
-      {/* Cocktail — large, shifted right */}
-      <img src={coupe} alt="" aria-hidden="true" className={styles.glass1} />
-      {/* Cocktail — main centered */}
-      <img src={coupe} alt="" aria-hidden="true" className={styles.glass2} />
+      {/* Cocktail glass */}
+      <img src={mobGlass} alt="" aria-hidden="true" className={styles.glass} />
 
       {/* Bottom info */}
       <div className={styles.bottomInfo}>

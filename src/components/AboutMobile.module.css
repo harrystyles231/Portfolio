@@ -1,0 +1,154 @@
+.page {
+  position: relative;
+  width: 100vw;
+  height: 100svh;
+  min-height: 844px;
+  background: #680E0F;
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* ── Vertical line ── */
+.vLine {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  top: 0;
+  background: rgba(255, 248, 189, 0.2);
+  z-index: 0;
+}
+
+/* ── Nav ── */
+.nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: min(300px, 80vw);
+  height: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 28px;
+  padding: 20px 0;
+  background: #680E0F;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.navDivider {
+  width: 1px;
+  height: 15px;
+  background: rgba(255, 248, 189, 0.1);
+  flex-shrink: 0;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 248, 189, 0.5);
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover { color: #FFF8BD; }
+.active { color: #FFF8BD; }
+
+/* ── Quote frame ── */
+.quoteFrame {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 10px;
+  left: 3vw;
+  right: 3vw;
+  top: 185px;
+  background: #680E0F;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.quote {
+  width: 100%;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: clamp(36px, 14.9vw, 58px);
+  line-height: 0.85em;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #FFF8BD;
+  margin: 0;
+}
+
+.quote em { font-style: italic; color: #FFFFFF; }
+
+/* ── Star ── */
+.star {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  top: 626px;
+  background: #FFF8BD;
+  border: 13px solid #680E0F;
+  border-radius: 2px;
+  z-index: 3;
+}
+
+/* ── Scroll label ── */
+.scrollFrame {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 197px;
+  height: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 666px;
+  background: #680E0F;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.scrollLabel {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: #FFF8BD;
+  opacity: 0.5;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Cards (both share base positioning) ── */
+.expCard {
+  position: absolute;
+  width: min(371px, calc(100vw - 20px));
+  left: 50%;
+  will-change: top, transform;
+  z-index: 11;
+  display: block;
+}
+
+.skillCard {
+  position: absolute;
+  width: min(371px, calc(100vw - 20px));
+  left: 50%;
+  will-change: top, transform;
+  z-index: 10;
+  display: block;
+}
