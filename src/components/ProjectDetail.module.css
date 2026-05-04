@@ -1,0 +1,243 @@
+.page {
+  position: relative;
+  width: 1440px;
+  height: 760px;
+  background: #FFFEF6;
+  overflow: hidden;
+}
+
+.canvas {
+  position: absolute;
+  width: 1440px;
+  will-change: transform;
+}
+
+/* ── Horizontal T-line ── */
+.hLine {
+  position: absolute;
+  width: 1456px;
+  height: 0;
+  left: calc(50% - 729px);
+  top: 287px;
+  opacity: 0.5;
+  border-top: 1px solid rgba(104, 14, 15, 0.2);
+  pointer-events: none;
+}
+
+/* ── Star SVG on the line ── */
+.starOnLine {
+  position: absolute;
+  width: 37px;
+  height: 37px;
+  left: calc(50% - 18.5px);
+  top: 268px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Nav ── */
+.nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  left: calc(50% - 150px);
+  top: 40px;
+  z-index: 20;
+}
+
+.navDivider {
+  width: 1px;
+  height: 15px;
+  background: rgba(104, 14, 15, 0.1);
+  flex-shrink: 0;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: rgba(104, 14, 15, 0.5);
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover { color: #680E0F; }
+.active { color: #680E0F; }
+
+/* ── Go Back ── */
+.goBack {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 15px;
+  left: 34px;
+  top: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 20;
+}
+
+.goBackArrow {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.goBackArrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #680E0F;
+  border-bottom: 2px solid #680E0F;
+  transform: translate(-20%, -50%) rotate(45deg);
+}
+
+.goBackText {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: #680E0F;
+}
+
+/* ── Title ── */
+.title {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 171px;
+  text-align: center;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  line-height: 74px;
+  letter-spacing: -0.04em;
+  color: #680E0F;
+  white-space: nowrap;
+}
+
+/* ── Cocktail label ── */
+.cocktail {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 261px;
+  text-align: center;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: #680E0F;
+  opacity: 0.5;
+}
+
+/* ── Description ── */
+.desc {
+  position: absolute;
+  top: 343px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #680E0F;
+  opacity: 0.8;
+}
+
+/* ── Image frame ── */
+.frame {
+  position: absolute;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.frameVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.frame img {
+  position: absolute;
+  display: block;
+}
+
+/* ── NEXT UP section ── */
+.nextUp {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nextName {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 92px;
+  line-height: 74px;
+  letter-spacing: -0.04em;
+  color: #680E0F;
+  margin: 0;
+}
+
+.nextLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  margin-top: 17px;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: #680E0F;
+}
+
+.nextArrow {
+  width: 14px;
+  height: 14px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.nextArrow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-right: 1px solid #680E0F;
+  border-top: 1px solid #680E0F;
+  transform: translate(-70%, -50%) rotate(45deg);
+}
+
+.nextStar {
+  width: 13px;
+  height: 13px;
+  margin-top: 179px;
+}

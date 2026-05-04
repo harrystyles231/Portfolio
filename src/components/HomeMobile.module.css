@@ -1,0 +1,189 @@
+.page {
+  position: relative;
+  width: 390px;
+  height: 844px;
+  background: #FFFEF6;
+  overflow: hidden;
+}
+
+/* ── Vertical line ── */
+.vLine {
+  position: absolute;
+  width: 1px;
+  height: 844px;
+  left: calc(50% - 0.5px);
+  top: 0;
+  background: #750506;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+/* ── Dashed ellipse ── */
+.ellipse {
+  position: absolute;
+  width: 514px;
+  height: 514px;
+  left: calc(50% - 257px);
+  top: calc(50% - 257px - 44px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Nav ── */
+.nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  height: 60px;
+  left: calc(50% - 150px);
+  top: 28px;
+  padding: 20px 0;
+  background: #FFFEF6;
+  box-sizing: border-box;
+  z-index: 20;
+}
+
+.navDivider {
+  width: 1px;
+  height: 15px;
+  background: rgba(117, 5, 6, 0.1);
+  flex-shrink: 0;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: rgba(117, 5, 6, 0.5);
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover { color: #750506; }
+.active { color: #750506; }
+
+/* ── CSS diamond star ── */
+.star {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: calc(50% - 9px);
+  top: 112px;
+  background: #750506;
+  border: 13px solid #FFFEF6;
+  transform: rotate(45deg);
+  z-index: 5;
+}
+
+/* ── Title frame ── */
+.titleFrame {
+  position: absolute;
+  left: 2px;
+  top: 285px;
+  width: 388px;
+  height: 144px;
+  background: #FFFEF6;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.titleLine1 {
+  width: 348px;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 58px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+  color: #750506;
+  margin: 0;
+  padding: 0;
+}
+
+.titleLine2 {
+  width: 388px;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 58px;
+  line-height: 58px;
+  letter-spacing: -0.04em;
+  color: #750506;
+  margin: 0;
+  padding: 0;
+}
+
+.titleLine2 em {
+  font-style: italic;
+  color: #750506;
+}
+
+/* ── Glass 1 (shifted right, behind) ── */
+.glass1 {
+  position: absolute;
+  width: 318px;
+  height: 318px;
+  left: calc(50% + 16px);
+  top: 274px;
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* ── Glass 2 (main, centered left) ── */
+.glass2 {
+  position: absolute;
+  width: 233px;
+  height: 233px;
+  left: calc(50% - 118.5px);
+  top: 368px;
+  object-fit: contain;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ── Bottom info ── */
+.bottomInfo {
+  position: absolute;
+  left: 24px;
+  top: 744px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  z-index: 10;
+}
+
+.year {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+  color: #750506;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.desc {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.01em;
+  color: #750506;
+  opacity: 0.5;
+  margin: 0;
+  max-width: 240px;
+}

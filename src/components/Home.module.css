@@ -1,0 +1,266 @@
+.page {
+  position: relative;
+  width: 1440px;
+  height: 760px;
+  background: #FFFEF6;
+  overflow: hidden;
+}
+
+/* ── Dashed circle ── */
+.circle {
+  position: absolute;
+  width: 909px;
+  height: 760px;
+  left: calc(50% - 909px/2 - 0.5px);
+  top: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Horizontal line ── */
+.hLine {
+  position: absolute;
+  width: 1456px;
+  height: 0;
+  left: calc(50% - 1456px/2);
+  top: calc(50% + 18px);
+  opacity: 0.5;
+  border-top: 1px solid rgba(117, 5, 6, 0.2);
+  z-index: 2;
+}
+
+/* ── Star markers ── */
+.star7,
+.star8 {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  top: 392px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.star7 { left: calc(50% - 6.5px + 454px); }
+.star8 { left: calc(50% - 6.5px - 455px); }
+
+/* ── Top center nav ── */
+.nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  left: calc(50% - 300px/2);
+  top: 40px;
+  z-index: 5;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: rgba(104, 14, 15, 0.5);
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover { color: #680E0F; }
+.active { color: #680E0F; }
+
+.navDivider {
+  width: 1px;
+  height: 15px;
+  background: rgba(104, 14, 15, 0.1);
+  flex-shrink: 0;
+}
+
+/* ── Hero text line 1 ── */
+.heroLine1 {
+  position: absolute;
+  width: 757px;
+  height: 148px;
+  left: calc(50% - 757px/2 - 0.5px);
+  top: 136px;
+  font-family: 'Instrument Serif', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 89px;
+  line-height: 74px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #750506;
+  z-index: 2;
+}
+
+/* ── Hero text line 2 ── */
+.heroLine2 {
+  position: absolute;
+  width: 757px;
+  height: 74px;
+  left: calc(50% - 757px/2 - 0.5px);
+  top: 284px;
+  font-family: 'Instrument Serif', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 89px;
+  line-height: 74px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #750506;
+  z-index: 2;
+}
+
+.portfolio {
+  font-style: italic;
+  color: #D9CD95;
+}
+
+/* ── Coupe glass ── */
+.coupeGlass {
+  position: absolute;
+  width: 954px;
+  height: 486px;
+  left: calc(50% - 477px);
+  top: 274px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ── CLICK FOR SECRET badge ── */
+.clickBadge {
+  position: absolute;
+  width: 143px;
+  height: 58px;
+  /* left/top set via inline style */
+  opacity: 0.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 4;
+  /* transition managed via inline style */
+}
+
+.clickBadge:hover { opacity: 1; }
+
+.badgeStar {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+.badgeText {
+  width: 103px;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  color: #750506;
+}
+
+/* ── Secret cocktail panel ── */
+.secretPanel {
+  position: absolute;
+  width: 331px;
+  height: 156px;
+  left: 1085px;
+  top: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  z-index: 4;
+}
+
+.secretHeader {
+  width: 331px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.secretName {
+  width: 331px;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 16px;
+  text-align: right;
+  color: #000000;
+}
+
+.secretSub {
+  width: 331px;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 16px;
+  text-align: right;
+  color: #050505;
+  opacity: 0.5;
+}
+
+.secretIngredients {
+  width: 331px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.ingredient {
+  width: 331px;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: right;
+  letter-spacing: 0.15em;
+  color: #050505;
+}
+
+/* ── /2026 ── */
+.year {
+  position: absolute;
+  width: 73px;
+  left: 24px;
+  top: 525px;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 16px;
+  text-align: right;
+  color: #000000;
+  z-index: 4;
+}
+
+/* ── Bio text ── */
+.bio {
+  position: absolute;
+  width: 189px;
+  left: 24px;
+  top: 561px;
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  color: #750506;
+  opacity: 0.8;
+  z-index: 4;
+}

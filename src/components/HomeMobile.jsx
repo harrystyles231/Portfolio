@@ -1,0 +1,48 @@
+import coupe from '../assets/coupe.png'
+import ellipse from '../assets/ellipse.svg'
+import styles from './HomeMobile.module.css'
+
+export default function HomeMobile({ onNavigate }) {
+  return (
+    <div className={styles.page}>
+
+      {/* Vertical line */}
+      <div className={styles.vLine} />
+
+      {/* Dashed ellipse */}
+      <img src={ellipse} alt="" aria-hidden="true" className={styles.ellipse} />
+
+      {/* Nav — bg masks the line */}
+      <nav className={styles.nav}>
+        <button className={`${styles.navLink} ${styles.active}`} onClick={() => onNavigate('home')}>HOME</button>
+        <div className={styles.navDivider} />
+        <button className={styles.navLink} onClick={() => onNavigate('about')}>ABOUT</button>
+        <div className={styles.navDivider} />
+        <button className={styles.navLink} onClick={() => onNavigate('projects')}>PROJECTS</button>
+        <div className={styles.navDivider} />
+        <button className={styles.navLink} onClick={() => onNavigate('contact')}>CONTACT</button>
+      </nav>
+
+      {/* CSS diamond star */}
+      <div className={styles.star} />
+
+      {/* Title */}
+      <div className={styles.titleFrame}>
+        <p className={styles.titleLine1}>Hey, you are just in time for a cockta..</p>
+        <p className={styles.titleLine2}>I mean, my <em>portfolio</em></p>
+      </div>
+
+      {/* Cocktail — large, shifted right */}
+      <img src={coupe} alt="" aria-hidden="true" className={styles.glass1} />
+      {/* Cocktail — main centered */}
+      <img src={coupe} alt="" aria-hidden="true" className={styles.glass2} />
+
+      {/* Bottom info */}
+      <div className={styles.bottomInfo}>
+        <p className={styles.year}>/2026</p>
+        <p className={styles.desc}>I am Mihaela, UX/UI designer who likes to move pixels around</p>
+      </div>
+
+    </div>
+  )
+}

@@ -1,0 +1,144 @@
+.page {
+  position: relative;
+  width: 1440px;
+  height: 760px;
+  background: #680E0F;
+  overflow: hidden;
+}
+
+/* ── Cross/T line SVG ── */
+.crossLine {
+  position: absolute;
+  width: 1438px;
+  height: 589px;
+  left: calc(50% - 1438px/2 + 1px);
+  top: calc(50% - 588.5px/2 + 14.25px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Nav ── */
+.nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  left: calc(50% - 150px);
+  top: 40px;
+  z-index: 20;
+}
+
+.navDivider {
+  width: 1px;
+  height: 15px;
+  background: rgba(255, 248, 189, 0.1);
+  flex-shrink: 0;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 248, 189, 0.5);
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover { color: #FFF8BD; }
+.active { color: #FFF8BD; }
+
+/* ── Quote frame (masks vertical line) ── */
+.quoteFrame {
+  position: absolute;
+  width: 728px;
+  height: 232px;
+  left: calc(50% - 364px);
+  top: 162px;
+  background: #680E0F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.quote {
+  width: 708px;
+  height: 192px;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 69px;
+  line-height: 64px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  color: #FFF8BD;
+}
+
+.quote em { font-style: italic; color: #FFFFFF; }
+
+/* ── Star on vertical line ── */
+.star {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  left: calc(50% - 17.5px + 1px);
+  top: 494px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ── Scroll label frame (masks vertical line) ── */
+.scrollFrame {
+  position: absolute;
+  width: 197px;
+  height: 40px;
+  left: calc(50% - 197px/2 - 0.5px);
+  top: 536px;
+  background: #680E0F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.scrollLabel {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: #FFF8BD;
+  opacity: 0.5;
+  text-align: right;
+}
+
+/* ── Skill card SVG ── */
+.skillCard {
+  position: absolute;
+  width: 826px;
+  height: 645px;
+  left: calc(50% - 826px/2 - 3.43px);
+  display: block;
+  will-change: top, transform;
+  z-index: 11;
+}
+
+/* ── Experience card SVG ── */
+.expCard {
+  position: absolute;
+  width: 826px;
+  height: 566px;
+  left: calc(50% - 413px);
+  display: block;
+  will-change: top, transform;
+  z-index: 10;
+}

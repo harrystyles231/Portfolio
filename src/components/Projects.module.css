@@ -1,0 +1,284 @@
+.page {
+  position: relative;
+  width: 1440px;
+  height: 760px;
+  background: #680E0F;
+  overflow: hidden;
+}
+
+/* ── Cross/T line SVG ── */
+.crossLine {
+  position: absolute;
+  width: 1438px;
+  height: 588.5px;
+  left: calc(50% - 1438px/2 + 1px);
+  top: calc(50% - 588.5px/2 + 14.25px);
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Nav ── */
+.nav {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px;
+  height: 20px;
+  left: calc(50% - 150px);
+  top: 40px;
+  z-index: 20;
+}
+
+.navDivider {
+  width: 1px;
+  height: 15px;
+  background: rgba(255, 248, 189, 0.1);
+  flex-shrink: 0;
+}
+
+.navLink {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: rgba(255, 248, 189, 0.5);
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover { color: #FFF8BD; }
+.active { color: #FFF8BD; }
+
+/* ── Project list — also acts as mask for vertical line ── */
+.list {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 0px;
+  gap: 34px;
+  width: 1148px;
+  height: 246px;
+  left: calc(50% - 574px);
+  top: 132px;
+  background: #680E0F;
+  z-index: 3;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  width: 1148px;
+  height: 74px;
+  flex-shrink: 0;
+}
+
+.row2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  width: 653px;
+  height: 74px;
+  flex-shrink: 0;
+}
+
+.projectItem {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 6px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: opacity 0.25s ease;
+  flex-shrink: 0;
+}
+
+.num {
+  width: 17px;
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: #FFF8BD;
+  text-align: right;
+}
+
+.name {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 92px;
+  line-height: 74px;
+  letter-spacing: -0.04em;
+  color: #FFF8BD;
+  white-space: nowrap;
+}
+
+/* ── Star (CSS diamond) on vertical line ── */
+.star8 {
+  position: absolute;
+  width: 33px;
+  height: 33px;
+  left: calc(50% - 16.5px);
+  top: 495px;
+  z-index: 3;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* ── "HOVER FOR DETAILS" frame — bg masks vertical line ── */
+.hoverFrame {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  width: 172px;
+  height: 40px;
+  left: calc(50% - 86px);
+  top: 536px;
+  background: #680E0F;
+  z-index: 3;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease;
+}
+
+.hoverLabel {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  text-align: center;
+  color: #FFF8BD;
+  opacity: 0.5;
+  white-space: nowrap;
+}
+
+/* ── "(5)" count frame — bg masks vertical line ── */
+.countFrame {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+  gap: 10px;
+  width: 88px;
+  height: 114px;
+  left: calc(50% - 44px);
+  top: 614px;
+  background: #680E0F;
+  z-index: 3;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease;
+}
+
+.count {
+  width: 68px;
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-size: 69px;
+  line-height: 74px;
+  letter-spacing: -0.04em;
+  color: #FFF8BD;
+  opacity: 0.2;
+}
+
+/* ── Hover detail card (bottom left) ── */
+.hoverCard {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+  width: 388px;
+  height: 130px;
+  left: 40px;
+  top: 590px;
+  z-index: 5;
+  transition: opacity 0.3s ease;
+}
+
+.cocktailBox {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 130px;
+  height: 130px;
+  flex-shrink: 0;
+  background: #871B1C;
+  border: 1px solid #9E3D3E;
+}
+
+.cocktailImg {
+  width: 50px;
+  height: 86px;
+  object-fit: contain;
+}
+
+.cocktailInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  width: 234px;
+  height: 130px;
+}
+
+.cocktailLabel {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: #FFF8BD;
+  opacity: 0.5;
+}
+
+.cocktailDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 234px;
+}
+
+.cocktailName {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.15em;
+  color: #FFF8BD;
+  opacity: 0.5;
+}
+
+.cocktailDesc {
+  font-family: Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.01em;
+  color: #FFF8BD;
+  opacity: 0.8;
+}
