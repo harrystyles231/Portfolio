@@ -41,7 +41,8 @@ export default function AboutMobile({ onNavigate }) {
     const onTouchMove = (e) => {
       e.preventDefault()
       if (lastYRef.current === null) return
-      const dy = lastYRef.current - e.touches[0].clientY
+      const scale = window.innerWidth / 390
+      const dy = (lastYRef.current - e.touches[0].clientY) / scale
       lastYRef.current = e.touches[0].clientY
       targetRef.current = Math.max(0, Math.min(TOTAL_MAX_LIFT, targetRef.current + dy * 1.5))
       cancelAnimationFrame(rafRef.current)
